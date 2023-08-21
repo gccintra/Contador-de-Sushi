@@ -15,9 +15,25 @@ body{
     background-color: #0D0D0D;
 }
 
+h2{
+    color: #F25C05;
+    font-size: 2.8em;
+    text-align: center;
+    
+
+}
+#left h2 span{
+    color: #8C8303;
+    font-size: 2.9em;
+    letter-spacing: 5px;
+    padding-left: 10px;   
+    
+}
+
 #counter{
     background-color: #2f2e2e;
     padding: 2rem;
+    margin-right: 15%;
     border-radius: 8px;
 
 }
@@ -67,4 +83,99 @@ button:hover{
     background-color: #F25C05;
     padding: .8rem 0;
     margin-top: 1rem;
+}
+
+img{
+    width: 260px;
+    
+}
+
+#left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding-right: 35px;
+   
+}
+
+
+@media (max-width: 600px){
+
+    body{
+        flex-direction: column;
+
+    }
+    h2{
+        font-size: 15px;
+    }
+    img{
+        width: 150px;
+        
+    }
+    #left{
+        width: 100%;
+        padding-right: 0px;
+        position: fixed;
+        top: 7%;
+    }
+    #counter{
+        background-color: #2f2e2e;
+        width: 330px;
+        padding: 2rem;
+        margin-right: 0;
+        border-radius: 10px;
+        margin-top: 100px;
+    
+    }  
+    #counter div{
+        display: flex;
+        align-items: center;
+    }
+    .count-button:last-child{
+        margin-right: 0;
+        margin-left: 1rem;
+    }
+    #value{
+        font-size: 4rem;
+        color: #FFF;
+        text-align: center;
+        min-width: 9rem;
+    }
+    button{
+        border: none;
+        border-radius: 10px;
+        color: #FFF;
+        font-weight: 400;
+        cursor: pointer;
+        transition: opacity .3s;
+    }
+    
+    button:hover{
+        opacity: .8;
+    }
+    
+    .count-button{
+        width: 3rem;
+        height: 4rem;
+        font-size: 2rem;
+        background-color: #0D0D0D;
+        margin-right: 1rem;
+    
+    }
+    
+    .count-button:last-child{
+        margin-right: 0;
+        margin-left: 1rem;
+    }
+    
+    #reset{
+        font-size: 1.2rem;
+        width: 100%;
+        background-color: #F25C05;
+        padding: .8rem 0;
+        margin-top: 1rem;
+    }
+    
 }

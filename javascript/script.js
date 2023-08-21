@@ -1,36 +1,35 @@
 const value = document.getElementById('value'),
-plusButton = document.getElementById('plus'),
-minusButton = document.getElementById('minus'),
-resetButton = document.getElementById('reset'); 
+  plusButton = document.getElementById('plus'),
+  minusButton = document.getElementById('minus'),
+  resetButton = document.getElementById('reset');
 
-
-var count = parseInt(localStorage.getItem('value'));
-value.innerHTML = count;
-   
-
+// Função para atualizar o valor na página
 const updateValue = () => {
-    value.innerHTML = count;
-    localStorage.removeItem('value');
-    localStorage.setItem('value', count);
+  value.innerHTML = count;
+};
 
-}
+// Função para atualizar o valor no localStorage e na página
+const updateAndSaveValue = () => {
+  localStorage.setItem('count', count);
+  updateValue();
+};
 
+// Inicialização do contador a partir do localStorage (se disponível)
+let count = parseInt(localStorage.getItem('count')) || 0;
+updateValue(); // Atualiza a página com o valor inicial
 
-
-//Click do mouse
-plusButton.addEventListener('click', () =>{
-    count += 1;
-    updateValue();
+// Event listeners para os botões
+plusButton.addEventListener('click', () => {
+  count += 1;
+  updateAndSaveValue();
 });
 
-minusButton.addEventListener('click', () =>{
-    count -= 1;
-    updateValue();
+minusButton.addEventListener('click', () => {
+  count -= 1;
+  updateAndSaveValue();
 });
 
 resetButton.addEventListener('click', () => {
-    count = 0
-    updateValue();
-})
-
-
+  count = 0;
+  updateAndSaveValue();
+});

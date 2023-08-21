@@ -3,12 +3,19 @@ plusButton = document.getElementById('plus'),
 minusButton = document.getElementById('minus'),
 resetButton = document.getElementById('reset'); 
 
+
+var count = parseInt(localStorage.getItem('value'));
+value.innerHTML = count;
+   
+
 const updateValue = () => {
     value.innerHTML = count;
+    localStorage.removeItem('value');
+    localStorage.setItem('value', count);
+
 }
 
-let count = 0;
-let intervalId = 0;
+
 
 //Click do mouse
 plusButton.addEventListener('click', () =>{
@@ -25,7 +32,5 @@ resetButton.addEventListener('click', () => {
     count = 0
     updateValue();
 })
-
-
 
 
